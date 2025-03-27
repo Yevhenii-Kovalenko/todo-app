@@ -25,7 +25,7 @@ export const TodoItem = ({ todo }) => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.li
+        <motion.div
           initial={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50, transition: { duration: 0.3 } }}
           className="mb-2 flex items-center justify-between rounded-xl bg-white p-4 shadow-md transition-all"
@@ -40,7 +40,7 @@ export const TodoItem = ({ todo }) => {
           >
             ❌
           </button>
-        </motion.li>
+        </motion.div>
       )}
     </AnimatePresence>
   );
