@@ -22,6 +22,10 @@ export const TodoItem = ({ todo }) => {
     },
   });
 
+  const handleDelete = (id) => {
+    deleteMutation.mutate(id);
+  };
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -36,7 +40,7 @@ export const TodoItem = ({ todo }) => {
           <button
             className="text-red-700 transition-all duration-300 hover:scale-85 active:scale-80"
             title="Delete"
-            onClick={() => deleteMutation.mutate(todo.id)}
+            onClick={() => handleDelete(todo.id)}
           >
             ❌
           </button>

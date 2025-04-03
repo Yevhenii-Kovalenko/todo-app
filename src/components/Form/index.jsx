@@ -30,13 +30,18 @@ export const TodoForm = () => {
     setTitle("");
   };
 
+  const handleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
   return (
     <form className="my-5 flex items-center gap-3" onSubmit={handleSubmit}>
       <input
+        name="todo"
         className="w-full rounded-full bg-gray-100 px-4 py-3 text-gray-800 shadow-md focus:ring-1 focus:ring-gray-500 focus:outline-none"
         type="text"
         value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        onChange={handleChange}
         placeholder="New todo"
       />
       <button
